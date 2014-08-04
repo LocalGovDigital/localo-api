@@ -17,6 +17,7 @@ group :development do
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'guard-livereload', require: false
 end
 group :development, :test do
   gem 'factory_girl_rails'
@@ -29,3 +30,9 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
 end
+
+gem 'apipie-rails'
+# gem 'api_taster'
+gem 'rabl'
+gem 'rest-client'
+gem 'nokogiri'
