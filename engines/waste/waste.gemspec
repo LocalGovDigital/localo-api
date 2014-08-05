@@ -7,11 +7,11 @@ require "waste/version"
 Gem::Specification.new do |s|
   s.name        = "waste"
   s.version     = Waste::VERSION
-  s.authors     = ["later: Your name"]
-  s.email       = ["later: Your email"]
-  s.homepage    = "https://github.com/LocalGovDigital/localo/wiki/Bin-collections-service"
-  s.summary     = "later: Summary of Waste."
-  s.description = "later: Description of Waste."
+  s.authors     = ["TODO: Your name"]
+  s.email       = ["TODO: Your email"]
+  s.homepage    = "TODO"
+  s.summary     = "TODO: Summary of Waste."
+  s.description = "TODO: Description of Waste."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]

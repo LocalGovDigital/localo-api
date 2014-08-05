@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get 'waste_collections/show'
 
   root to: 'visitors#index'
+
+  mount Waste::Engine => '/waste'
 end
