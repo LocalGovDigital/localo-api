@@ -3,6 +3,13 @@ require 'yaml'
 require "waste/item"
 require "waste/type"
 
+puts '[db:seed] dumping db data...'
+
+Waste::Type.destroy_all
+Waste::Item.destroy_all
+
+puts '[db:seed] ...dumped'
+
 puts 'Seeding waste items'
 
 items = YAML::load_file File.join ['db', 'seeds', 'waste_items.yml']
