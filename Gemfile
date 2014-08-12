@@ -36,5 +36,6 @@ gem 'apipie-rails'
 gem 'rabl'
 gem 'rest-client'
 gem 'nokogiri'
+gem 'seedbank'
 
 gem 'waste', path: "engines/waste"
