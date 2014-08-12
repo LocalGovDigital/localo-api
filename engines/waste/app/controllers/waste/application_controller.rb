@@ -1,4 +1,4 @@
-module Waste
-  class ApplicationController < ActionController::Base
+# module Waste
+  class Waste::ApplicationController < ApplicationController
   end
-end
+# end
