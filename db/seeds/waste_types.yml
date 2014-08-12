@@ -9,3 +9,17 @@ types:
   - egg boxes
   avoid:
   - tissue paper
+- name: garden waste
+  allowed:
+  - grass cuttings
+  - compost
+  avoid:
+  - flower pots
+  - bricks
+- name: glass
+  allowed:
+  - spectacles
+  - bottles
+  - jars
+  avoid:
+  - fluorescent light tubes

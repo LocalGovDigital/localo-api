@@ -1,6 +1,7 @@
 
 require 'yaml'
 require "waste/item"
+require "waste/type"
 
 puts 'Seeding waste items'
 
@@ -13,7 +14,7 @@ unless Waste::Item.count > 0
     FactoryGirl.create(:item, :name => item)
   end
 else
-  puts '[db:seed] Taxonomies seeded!'
+  puts '[db:seed] Items seeded!'
 end
 
 puts 'Seeding waste types'
@@ -24,15 +25,10 @@ unless Waste::Type.count > 0
   puts "[db:seed] Seeding waste types"
   types['types'].each do |type|
     puts type['name']
-    # taxonomy_obj = Spree::Taxonomy.find_by_name(taxonomy['name']) || FactoryGirl.create(:taxonomy, :name => taxonomy['name'])
-    # taxonomy_root = taxonomy_obj.root
-
-    # taxonomy['terms'].each do |taxon_name|
-    #   FactoryGirl.create(:taxon, :name => taxon_name, :parent_id => taxonomy_root.id)
-    # end
+    FactoryGirl.create(:type, :name => type['name'])
   end
 else
-  puts '[db:seed] Taxonomies seeded!'
+  puts '[db:seed] Types seeded!'
 end
 
 
