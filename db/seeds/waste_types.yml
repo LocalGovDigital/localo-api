@@ -1,0 +1,11 @@
+---
+types:
+- name: mixed paper and cardboard
+  allowed:
+  - newspapers
+  - greeting cards
+  - junk mail
+  - cardboard packaging
+  - egg boxes
+  avoid:
+  - tissue paper

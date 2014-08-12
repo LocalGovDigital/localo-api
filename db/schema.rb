@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812060050) do
+ActiveRecord::Schema.define(version: 20140812155933) do
+
+  create_table "waste_collections", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "waste_containers", force: true do |t|
     t.integer  "size"
