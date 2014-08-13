@@ -43,7 +43,7 @@ unless Waste::Container.count > 0
   puts "[db:seed] Seeding waste containers"
   containers.each do |container|
     puts container['name']
-    FactoryGirl.create(:container, :name => container['type'], :size => container['size'], :color => container['color'], :waste_type => container['waste_type'])
+    FactoryGirl.create(:container, :container_type => container['type'], :size => container['size'], :color => container['color'], :waste_type => container['waste_type'])
   end
 else
   puts '[db:seed] Containers seeded!'
