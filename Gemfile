@@ -24,7 +24,7 @@ group :development do
   gem 'guard-livereload', require: false
 end
 
-group :development, :test do
+group :development, :test, :production do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
 end
