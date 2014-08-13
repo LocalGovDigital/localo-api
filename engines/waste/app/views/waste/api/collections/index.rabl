@@ -1,0 +1,2 @@
+object @collections
+attributes :name

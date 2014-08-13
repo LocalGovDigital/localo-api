@@ -12,6 +12,7 @@ module Waste
 
     # GET /containers/1
     def show
+      @container = Container.find(params[:id])
     end
 
     # GET /containers/new
