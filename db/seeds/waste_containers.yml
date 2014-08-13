@@ -1,0 +1,10 @@
+---
+- type: wheelie bin
+  waste_type: recycling
+  size: 22L
+  color: black
+
+- type: caddy
+  waste_type: food
+  size: 4L
+  color: green

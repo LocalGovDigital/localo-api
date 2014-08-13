@@ -10,6 +10,9 @@ FactoryGirl.define do
     name "recycling"
   end
   factory :container, class: Waste::Container do
-    name "wheelie bin"
+    container_type "wheelie bin"
+    size ''
+    color ''
+    # waste_type ''
   end
 end
