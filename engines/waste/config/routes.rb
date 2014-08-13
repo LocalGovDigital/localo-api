@@ -7,4 +7,7 @@ Waste::Engine.routes.draw do
 
   resources :types
 
+  namespace :api, :defaults => {:formats => :json} do
+    resources :containers
+  end
 end
