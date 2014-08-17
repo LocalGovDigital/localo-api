@@ -1,0 +1,21 @@
+%h1 Listing round_manifests
+
+%table
+  %tr
+    %th Round
+    %th Container
+    %th
+    %th
+    %th
+
+  - @round_manifests.each do |round_manifest|
+    %tr
+      %td= round_manifest.round_id
+      %td= round_manifest.container_id
+      %td= link_to 'Show', round_manifest
+      %td= link_to 'Edit', edit_round_manifest_path(round_manifest)
+      %td= link_to 'Destroy', round_manifest, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Round manifest', new_round_manifest_path

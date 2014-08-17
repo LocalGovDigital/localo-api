@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Round:
+  = @round_manifest.round_id
+%p
+  %b Container:
+  = @round_manifest.container_id
+
+= link_to 'Edit', edit_round_manifest_path(@round_manifest)
+\|
+= link_to 'Back', round_manifests_path

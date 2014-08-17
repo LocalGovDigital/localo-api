@@ -1,0 +1,16 @@
+= form_for @round_manifest do |f|
+  - if @round_manifest.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@round_manifest.errors.count, "error")} prohibited this round_manifest from being saved:"
+      %ul
+        - @round_manifest.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :round_id
+    = f.number_field :round_id
+  .field
+    = f.label :container_id
+    = f.number_field :container_id
+  .actions
+    = f.submit 'Save'

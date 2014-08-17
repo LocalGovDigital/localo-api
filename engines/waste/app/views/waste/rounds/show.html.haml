@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Property:
+  = @round.property
+%p
+  %b Round manifest:
+  = @round.round_manifest_id
+%p
+  %b Schedule:
+  = @round.schedule_id
+
+= link_to 'Edit', edit_round_path(@round)
+\|
+= link_to 'Back', rounds_path

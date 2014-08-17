@@ -14,6 +14,7 @@ gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'haml'
 gem "haml-rails"
+gem 'simple_form'
 
 group :development do
   # gem 'sqlite3'

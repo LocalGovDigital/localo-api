@@ -1,0 +1,23 @@
+%h1 Listing rounds
+
+%table.table.table-striped
+  %tr
+    %th Property
+    %th Round manifest
+    %th Schedule
+    %th
+    %th
+    %th
+
+  - @rounds.each do |round|
+    %tr
+      %td= round.property
+      %td= round.round_manifest_id
+      %td= round.schedule_id
+      %td= link_to 'Show', round
+      %td= link_to 'Edit', edit_round_path(round)
+      %td= link_to 'Destroy', round, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Round', new_round_path

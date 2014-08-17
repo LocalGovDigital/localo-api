@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Uprn:
+  = @property.uprn
+
+= link_to 'Edit', edit_property_path(@property)
+\|
+= link_to 'Back', properties_path
