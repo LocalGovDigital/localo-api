@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Size:
+  = @container.size
+%p
+  %strong Color:
+  = @container.color
+%p
+  %strong Type:
+  = @container.container_type
+= link_to 'Edit', edit_container_path(@container)
+|
+\#{link_to 'Back', containers_path}
