@@ -18,7 +18,7 @@ development:
   encoding: unicode
   database: localo_api
   pool: 5
-  username: pmackay
+  username: <%= ENV['USER'] %>
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
