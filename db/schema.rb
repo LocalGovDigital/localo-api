@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817111234) do
+ActiveRecord::Schema.define(version: 20140820133703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 20140817111234) do
     t.string   "uprn"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "paon"
+    t.string   "saon"
+    t.string   "postcode"
+    t.string   "post_town"
   end
 
   create_table "waste_round_manifests", force: true do |t|

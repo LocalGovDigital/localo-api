@@ -56,7 +56,7 @@ module Waste
 
       # Only allow a trusted parameter "white list" through.
       def property_params
-        params.require(:property).permit(:uprn)
+        params.require(:property).permit(:uprn, :paon, :saon, :postcode, :post_town)
       end
   end
 end
