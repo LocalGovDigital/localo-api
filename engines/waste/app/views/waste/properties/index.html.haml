@@ -3,6 +3,10 @@
 %table.table.table-striped
   %tr
     %th UPRN
+    %th PAON
+    %th SAON
+    %th Post Town
+    %th Post Code
     %th
     %th
     %th
@@ -10,6 +14,10 @@
   - @properties.each do |property|
     %tr
       %td= property.uprn
+      %td= property.paon
+      %td= property.saon
+      %td= property.post_town
+      %td= property.postcode
       %td= link_to 'Show', property
       %td= link_to 'Edit', edit_property_path(property)
       %td= link_to 'Destroy', property, :method => :delete, :data => { :confirm => 'Are you sure?' }

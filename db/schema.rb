@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20140929115144) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "round_id"
+    t.string   "paon"
+    t.string   "saon"
+    t.string   "postcode"
+    t.string   "post_town"
   end
 
   create_table "waste_round_manifests", force: true do |t|

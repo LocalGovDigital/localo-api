@@ -4,12 +4,24 @@ module Waste
   class ContainersController < ApplicationController
     before_action :set_container, only: [:show, :edit, :update, :destroy]
 
+    resource_description do
+      name 'WasteContainer'
+      short "A container is a physical thing that holds a waste type."
+      formats ['json', 'xml']
+      api_base_url '/waste'
+    end
+
     # GET /containers
+    api :GET, '/containers'
+    description 'Find all available containers'
     def index
       @containers = Container.all
     end
 
     # GET /containers/1
+    api :GET, '/containers/:id'
+    param :id, :number
+    description 'Find a container by its id'
     def show
     end
 
@@ -23,6 +35,8 @@ module Waste
     end
 
     # POST /containers
+    api :POST, '/containers'
+    description 'Create a new container type'
     def create
       @container = Container.new(container_params)
 
@@ -34,6 +48,9 @@ module Waste
     end
 
     # PATCH/PUT /containers/1
+    api :PUT, '/containers/:id'
+    param :id, :number
+    description 'Update an existing container type by its id'
     def update
       if @container.update(container_params)
         redirect_to @container, notice: 'Container was successfully updated.'
@@ -43,6 +60,9 @@ module Waste
     end
 
     # DELETE /containers/1
+    api :DELETE, '/containers/:id'
+    param :id, :number
+    description 'Delete a container by its id'
     def destroy
       @container.destroy
       redirect_to containers_url, notice: 'Container was successfully destroyed.'

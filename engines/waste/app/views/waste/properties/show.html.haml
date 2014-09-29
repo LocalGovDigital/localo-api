@@ -1,8 +1,11 @@
 %p#notice= notice
 
-%p
-  %b Uprn:
-  = @property.uprn
+%ul
+  %li= "Uprn: #{@property.uprn}"
+  %li= "PAON: #{@property.paon}"
+  %li= "SAON: #{@property.saon}"
+  %li= "Post Town: #{@property.post_town}"
+  %li= "Post Code: #{@property.postcode}"
 
 = link_to 'Edit', edit_property_path(@property)
 \|
