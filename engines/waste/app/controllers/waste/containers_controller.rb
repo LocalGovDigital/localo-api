@@ -56,7 +56,7 @@ module Waste
 
       # Only allow a trusted parameter "white list" through.
       def container_params
-        params.require(:container).permit(:size, :color, :type)
+        params.require(:container).permit(:size, :color, :container_type)
       end
   end
 end
