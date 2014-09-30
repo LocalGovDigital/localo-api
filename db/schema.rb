@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929115144) do
+ActiveRecord::Schema.define(version: 20140930110507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,10 +54,18 @@ ActiveRecord::Schema.define(version: 20140929115144) do
     t.datetime "updated_at"
   end
 
+  create_table "waste_round_properties", force: true do |t|
+    t.integer  "round_id"
+    t.integer  "property_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "waste_rounds", force: true do |t|
     t.integer  "schedule_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "schedule"
   end
 
   create_table "waste_types", force: true do |t|

@@ -1,4 +1,5 @@
 = simple_form_for @round do |f|
   = f.association :properties, label_method: :uprn
   = f.association :containers, label_method: :container_type
+  = f.select_recurring :schedule
   = f.button :submit

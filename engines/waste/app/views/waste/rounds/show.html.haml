@@ -1,14 +1,17 @@
 %p#notice= notice
 
 %p
-  %b Property:
-  = @round.property
+  %b Properties:
+  - @round.properties.each do |p|
+    %p= p.uprn
+
 %p
-  %b Round manifest:
-  = @round.round_manifest_id
+  %b Containers:
+  - @round.containers.each do |c|
+    %p= c.container_type
 %p
   %b Schedule:
-  = @round.schedule_id
+  = @schedule
 
 = link_to 'Edit', edit_round_path(@round)
 \|

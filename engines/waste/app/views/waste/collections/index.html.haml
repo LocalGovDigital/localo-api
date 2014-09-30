@@ -1,0 +1,8 @@
+%h1 Listing collections
+
+- @collection_days.each do |day|
+  %p= day
+
+
+%br
+  = link_to 'New Collection', new_collection_path

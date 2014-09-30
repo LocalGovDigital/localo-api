@@ -16,7 +16,15 @@ module Waste
     respond_to :json
     description 'Find all available collections'
     def index
-      @collections = Collection.all
+      now = Time.now
+      @rounds = Round.all
+      @collection_days = []
+      @rounds.each do |round|
+        IceCube::Schedule.new(now) do |s|
+          s.add_recurrence_rule(IceCube::Rule.from_yaml(round.schedule))
+          @collection_days += s.occurrences(now + 14.days)
+        end
+      end
     end
 
     # GET /collections/1

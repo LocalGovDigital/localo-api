@@ -11,6 +11,13 @@ module Waste
 
     # GET /rounds/1
     def show
+      @round = Round.find(params[:id])
+      puts 'round'
+      puts @round
+      puts @round.to_yaml
+      @schedule = IceCube::Rule.from_yaml(@round.schedule)
+      # puts @schedule.recurrence_rules.to_s
+      puts @schedule.to_s
     end
 
     # GET /rounds/new
@@ -56,7 +63,7 @@ module Waste
 
       # Only allow a trusted parameter "white list" through.
       def round_params
-        params.require(:round).permit(:property, :schedule_id)
+        params.require(:round).permit( {property_ids: []}, {container_ids: []}, :schedule )
       end
   end
 end

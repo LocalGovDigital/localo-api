@@ -15,6 +15,7 @@ gem 'high_voltage'
 gem 'haml'
 gem "haml-rails"
 gem 'simple_form'
+gem 'recurring_select'
 
 group :development do
   # gem 'sqlite3'
