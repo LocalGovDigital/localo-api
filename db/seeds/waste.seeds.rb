@@ -11,7 +11,6 @@ Waste::Item.destroy_all
 puts '[db:seed] ...dumped'
 
 puts 'Seeding waste items'
-
 items = YAML::load_file File.join ['db', 'seeds', 'waste_items.yml']
 unless Waste::Item.count > 0
   puts "[db:seed] Seeding waste items"
@@ -24,7 +23,6 @@ else
 end
 
 puts 'Seeding waste types'
-
 types = YAML::load_file File.join ['db', 'seeds', 'waste_types.yml']
 unless Waste::Type.count > 0
   puts "[db:seed] Seeding waste types"
@@ -37,7 +35,6 @@ else
 end
 
 puts 'Seeding waste containers'
-
 containers = YAML::load_file File.join ['db', 'seeds', 'waste_containers.yml']
 unless Waste::Container.count > 0
   puts "[db:seed] Seeding waste containers"
@@ -47,4 +44,15 @@ unless Waste::Container.count > 0
   end
 else
   puts '[db:seed] Containers seeded!'
+end
+
+puts 'Seeding properties'
+properties = YAML::load_file File.join ['db', 'seeds', 'properties.yml']
+unless Waste::Property.count > 0
+  puts "[db:seed] Seeding properties"
+  properties.each do |property|
+    FactoryGirl.create(:property, :uprn => property)
+  end
+else
+  puts '[db:seed] Properties seeded!'
 end

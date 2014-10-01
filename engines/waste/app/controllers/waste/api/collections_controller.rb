@@ -1,12 +1,32 @@
 require_dependency "waste/application_controller"
 
 module Waste
+  # Temp class to generate API output. Need to decide on how collections
+  # should be modelled and when they are persisted.
+  class CollectionTemp
+    attr_accessor :id
+    attr_accessor :date
+  end
+
   class Api::CollectionsController < ApplicationController
     before_action :set_collection, only: [:show, :edit, :update, :destroy]
 
     # GET /collections
     def index
-      @collections = Collection.all
+      @collections = []
+      now = Time.now
+      Round.all.each do |round|
+        IceCube::Schedule.new(now) do |s|
+          s.add_recurrence_rule(IceCube::Rule.from_yaml(round.schedule))
+          s.occurrences(now + 14.days).each do |date|
+            col = CollectionTemp.new
+            col.id = date.to_date.jd
+            col.date = date.to_s
+            @collections << col
+          end
+        end
+      end
+      puts @collections
     end
 
     # GET /collections/1
