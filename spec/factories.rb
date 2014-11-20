@@ -3,7 +3,7 @@ FactoryGirl.define do
   factory :item, class: Waste::Item do
     name "paper"
   end
-  factory :type, class: Waste::Type do
+  factory :category, class: Waste::Category do
     name "food"
   end
   factory :collection, class: Waste::Collection do

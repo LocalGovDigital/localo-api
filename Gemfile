@@ -45,7 +45,6 @@ end
 
 gem 'apipie-rails'
 # gem 'api_taster'
-gem 'rabl'
 gem 'rest-client'
 gem 'nokogiri'
 gem 'seedbank'

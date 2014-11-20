@@ -1,11 +1,11 @@
 
 require 'yaml'
-require "waste/item"
-require "waste/type"
+# require "waste/item"
+# require "waste/category"
 
 puts '[db:seed] dumping db data...'
 
-Waste::Type.destroy_all
+Waste::Category.destroy_all
 Waste::Item.destroy_all
 
 puts '[db:seed] ...dumped'
@@ -22,16 +22,16 @@ else
   puts '[db:seed] Items seeded!'
 end
 
-puts 'Seeding waste types'
-types = YAML::load_file File.join ['db', 'seeds', 'waste_types.yml']
-unless Waste::Type.count > 0
-  puts "[db:seed] Seeding waste types"
-  types['types'].each do |type|
-    puts type['name']
-    FactoryGirl.create(:type, :name => type['name'])
+puts 'Seeding waste categories'
+categories = YAML::load_file File.join ['db', 'seeds', 'waste_categories.yml']
+unless Waste::Category.count > 0
+  puts "[db:seed] Seeding waste categories"
+  categories['categories'].each do |category|
+    puts category['name']
+    FactoryGirl.create(:category, :name => category['name'])
   end
 else
-  puts '[db:seed] Types seeded!'
+  puts '[db:seed] Categories seeded!'
 end
 
 puts 'Seeding waste containers'

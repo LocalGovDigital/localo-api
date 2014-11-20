@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930110507) do
+ActiveRecord::Schema.define(version: 20141120163248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "waste_categories", force: true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "waste_collections", force: true do |t|
     t.string   "name"
@@ -66,6 +73,15 @@ ActiveRecord::Schema.define(version: 20140930110507) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "schedule"
+  end
+
+  create_table "waste_services", force: true do |t|
+    t.string   "name"
+    t.string   "frequency"
+    t.text     "instructions"
+    t.string   "esd_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "waste_types", force: true do |t|

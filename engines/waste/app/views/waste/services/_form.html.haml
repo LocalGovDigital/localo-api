@@ -1,0 +1,12 @@
+= simple_form_for @service do |f|
+  - if @service.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@service.errors.count, "error")} prohibited this service from being saved:"
+      %ul
+        - @service.errors.full_messages.each do |msg|
+          %li= msg
+  = f.input :name
+  = f.input :frequency, :collection => ['weekly', 'alternate weekly', 'monthly', 'yearly']
+  = f.input :instructions
+  = f.input :esd_url, as: :url
+  = f.button :submit
