@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
-gem 'rails', '4.1.4'
+ruby '2.2.2'
+gem 'rails', '~> 4.2.7.1'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -27,7 +27,7 @@ group :development do
 end
 
 group :development, :test, :production do
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'rspec-rails'
 end
 
